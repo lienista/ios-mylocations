@@ -1,25 +1,26 @@
 //
-//  LocationsViewController.m
-//  MyLocations
+//  VillagesViewController.m
+//  MyVillages
 //
-//  Created by Lienne Nguyen on 11/27/13.
+//  Created by Esther Resendiz on 12/7/13.
 //  Copyright (c) 2013 Lienne Nguyen. All rights reserved.
 //
 
-#import "LocationsViewController.h"
-#import "Location.h"
-#import "LocationCell.h"
-#import "LocationDetailsViewController.h"
+
+#import "VillagesViewController.h"
+#import "Village.h"
+#import "VillageCell.h"
+#import "VillageDetailsViewController.h"
 // esther
-#import "CurrentLocationViewController.h"
+#import "CurrentVillageViewController.h"
 
 #import "UIImage+Resize.h"
 #import "NSMutableString+AddText.h"
 
-@interface LocationsViewController () <NSFetchedResultsControllerDelegate>
+@interface VillagesViewController () <NSFetchedResultsControllerDelegate>
 @end
 
-@implementation LocationsViewController
+@implementation VillagesViewController
 {
     NSFetchedResultsController *_fetchedResultsController;
 }
@@ -34,59 +35,57 @@
 }
 
 /*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Location"];
-    
-    Location *location = _locations[indexPath.row];
-    
-    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:100];
-    
-    descriptionLabel.text = location.locationDescription;
-    
-    UILabel *addressLabel = (UILabel *)[cell viewWithTag:101];
-    addressLabel.text = [NSString stringWithFormat:@"%@ %@, %@",
-                         location.placemark.subThoroughfare,
-                         location.placemark.thoroughfare,
-                         location.placemark.locality];
-    return cell;
-}*/
+ {
+ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Village"];
+ 
+ Village *Village = _locations[indexPath.row];
+ 
+ UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:100];
+ 
+ descriptionLabel.text = location.locationDescription;
+ 
+ UILabel *addressLabel = (UILabel *)[cell viewWithTag:101];
+ addressLabel.text = [NSString stringWithFormat:@"%@ %@, %@",
+ location.placemark.subThoroughfare,
+ location.placemark.thoroughfare,
+ location.placemark.locality];
+ return cell;
+ }*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Location"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Village"];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-//    VillageCell *VillageCell = (VillageCell *)cell;
-
-    LocationCell *locationCell = (LocationCell *)cell;
-    Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    VillageCell *villageCell = (VillageCell *) cell;
+    Village *village = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    if ([location.locationDescription length] > 0) {
-        locationCell.descriptionLabel.text = location.locationDescription;
+    if ([village.locationDescription length] > 0) {
+        villageCell.descriptionLabel.text = village.locationDescription;
     } else {
-        locationCell.descriptionLabel.text = @"(No Description)";
+        villageCell.descriptionLabel.text = @"(No Description)";
     }
     
-    if (location.placemark != nil){
+    if (village.placemark != nil){
         NSMutableString *string = [NSMutableString stringWithCapacity:100];
-        [string addText:location.placemark.subThoroughfare withSeparator:@""];
-        [string addText:location.placemark.thoroughfare withSeparator:@" "];
-        [string addText:location.placemark.locality withSeparator:@", "];
-        locationCell.addressLabel.text = string;
+        [string addText:village.placemark.subThoroughfare withSeparator:@""];
+        [string addText:village.placemark.thoroughfare withSeparator:@" "];
+        [string addText:village.placemark.locality withSeparator:@", "];
+        villageCell.addressLabel.text = string;
         
     } else {
-        locationCell.addressLabel.text = [NSString stringWithFormat: @"Lat: %.8f, Long: %.8f",
-                                          [location.latitude doubleValue],
-                                          [location.longitude doubleValue]];
+        villageCell.addressLabel.text = [NSString stringWithFormat: @"Lat: %.8f, Long: %.8f",
+                                          [village.latitude doubleValue],
+                                          [village.longitude doubleValue]];
     }
     
     UIImage *image = nil;
-    if ([location hasPhoto]) {
-        image = [location photoImage];
+    if ([village hasPhoto]) {
+        image = [village photoImage];
         if (image != nil) {
             image = [image resizedImageWithBounds:CGSizeMake(52, 52)];
         }
@@ -94,21 +93,21 @@
     if (image == nil) {
         image = [UIImage imageNamed:@"No Photo"];
     }
-    locationCell.photoImageView.image = image;
-    locationCell.backgroundColor = [UIColor blackColor];
-    locationCell.descriptionLabel.textColor = [UIColor whiteColor];
-    locationCell.descriptionLabel.highlightedTextColor = locationCell.descriptionLabel.textColor;
-    locationCell.addressLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
-    locationCell.addressLabel.highlightedTextColor = locationCell.addressLabel.textColor;
+    villageCell.photoImageView.image = image;
+    villageCell.backgroundColor = [UIColor blackColor];
+    villageCell.descriptionLabel.textColor = [UIColor whiteColor];
+    villageCell.descriptionLabel.highlightedTextColor = villageCell.descriptionLabel.textColor;
+    villageCell.addressLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    villageCell.addressLabel.highlightedTextColor = villageCell.addressLabel.textColor;
     
     UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
     
     selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
     
-    locationCell.selectedBackgroundView = selectionView;
-    locationCell.photoImageView.layer.cornerRadius = locationCell.photoImageView.bounds.size.width / 2.0f;
-    locationCell.photoImageView.clipsToBounds = YES;
-    locationCell.separatorInset = UIEdgeInsetsMake(0, 82, 0, 0);
+    villageCell.selectedBackgroundView = selectionView;
+    villageCell.photoImageView.layer.cornerRadius = villageCell.photoImageView.bounds.size.width / 2.0f;
+    villageCell.photoImageView.clipsToBounds = YES;
+    villageCell.separatorInset = UIEdgeInsetsMake(0, 82, 0, 0);
 }
 
 //fetchedResultsController is lazy loading method - objects are not created until needed
@@ -117,7 +116,7 @@
     if (_fetchedResultsController == nil) {
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Village" inManagedObjectContext:self.managedObjectContext];
         [fetchRequest setEntity:entity];
         
         NSSortDescriptor *sortDescriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"category" ascending:YES];
@@ -129,7 +128,7 @@
         _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                         managedObjectContext:self.managedObjectContext
                                                                           sectionNameKeyPath:@"category"
-                                                                                   cacheName:@"Locations"];
+                                                                                   cacheName:@"Villages"];
         _fetchedResultsController.delegate = self;
     }
     return _fetchedResultsController;
@@ -138,7 +137,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [NSFetchedResultsController deleteCacheWithName:@"Locations"];
+    [NSFetchedResultsController deleteCacheWithName:@"Villages"];
     [self performFetch];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -161,22 +160,22 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"EditLocation"]) {
+    if ([segue.identifier isEqualToString:@"EditVillage"]) {
         
         UINavigationController *navigationController = segue.destinationViewController;
         
-        LocationDetailsViewController *controller = (LocationDetailsViewController *) navigationController.topViewController;
+        VillageDetailsViewController *controller = (VillageDetailsViewController *) navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
-        Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        controller.locationToEdit = location;
-    } else if ([segue.identifier isEqualToString:@"CurrLocation"]) {
-        CurrentLocationViewController *controller =segue.destinationViewController;
+        Village *Village = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        controller.VillageToEdit = Village;
+    } else if ([segue.identifier isEqualToString:@"CurrVillage"]) {
+        CurrentVillageViewController *controller =segue.destinationViewController;
         // core data objects from data store
         controller.managedObjectContext = self.managedObjectContext;
     }
-
+    
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
@@ -202,7 +201,7 @@
             NSLog(@"*** NSFetchedResultsChangeMove (object)");
             [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-        break;
+            break;
     }
 }
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
@@ -215,7 +214,7 @@
         case NSFetchedResultsChangeDelete:
             NSLog(@"*** NSFetchedResultsChangeDelete (section)");
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-        break;
+            break;
     }
 }
 
@@ -229,9 +228,9 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [location removePhotoFile];
-        [self.managedObjectContext deleteObject:location];
+        Village *Village = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [Village removePhotoFile];
+        [self.managedObjectContext deleteObject:Village];
         NSError *error;
         
         if (![self.managedObjectContext save:&error]) {

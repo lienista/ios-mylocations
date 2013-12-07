@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "CurrentLocationViewController.h"
 #import "LocationsViewController.h"
+#import "CurrentVillageViewController.h"
+#import "VillagesViewController.h"
 #import "MapViewController.h"
 
 NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectContextSaveDidFailNotification";
@@ -34,6 +36,8 @@ NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectCo
     // esther
     //CurrentLocationViewController *currentLocationViewController = (CurrentLocationViewController *) tabBarController.viewControllers[2];
     //currentLocationViewController.managedObjectContext = self.managedObjectContext;
+    //CurrentVillageViewController *currentVillageViewController = (CurrentVillageViewController *) tabBarController.viewControllers[3];
+    //currentVillageViewController.managedObjectContext = self.managedObjectContext;
     
    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fatalCoreDataError:) name:ManagedObjectContextSaveDidFailNotification object:nil];
@@ -43,6 +47,11 @@ NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectCo
     LocationsViewController *locationsViewController = (LocationsViewController *) navigationController.viewControllers[0];
     locationsViewController.managedObjectContext = self.managedObjectContext;
     
+    UINavigationController *navigationController2 = (UINavigationController *)tabBarController.viewControllers[2];
+
+    VillagesViewController *villagesViewController = (VillagesViewController *) navigationController2.viewControllers[0];
+    villagesViewController.managedObjectContext = self.managedObjectContext;
+
     
     // 2-> 0 , esther
     MapViewController *mapViewController = (MapViewController *)tabBarController.viewControllers[0];
