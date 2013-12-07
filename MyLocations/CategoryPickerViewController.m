@@ -33,8 +33,8 @@
                     @"Icecream Vendor",
                     @"Landmark", @"Park"];
     
-    self.tableView.backgroundColor = [UIColor blackColor];
-    self.tableView.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.separatorColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
 }
 
 #pragma mark - UITableViewDataSource
@@ -88,8 +88,8 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.backgroundColor = [UIColor blackColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor brownColor];
     cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
     UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
     

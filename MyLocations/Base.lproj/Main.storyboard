@@ -537,7 +537,7 @@
         <scene sceneID="7ne-rt-I44">
             <objects>
                 <navigationController definesPresentationContext="YES" id="usm-mR-ow0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Villages" id="003-cx-Yps"/>
+                    <tabBarItem key="tabBarItem" title="Villages" image="BrownVillages" id="003-cx-Yps"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lCI-1D-t1V">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -553,7 +553,7 @@
         <scene sceneID="eI1-YA-bw4">
             <objects>
                 <navigationController definesPresentationContext="YES" id="GmI-uw-dfL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" image="Locations" id="Cka-qY-I9x"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="BrownLocations" id="Cka-qY-I9x"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RRk-Ai-s0z">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -585,7 +585,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Map" id="brF-FX-JTD">
-                                        <barButtonItem key="leftBarButtonItem" image="Pin" id="kyO-Wx-rVp">
+                                        <barButtonItem key="leftBarButtonItem" image="BrownPin" id="kyO-Wx-rVp">
                                             <connections>
                                                 <action selector="showUser" destination="tuc-cc-HUU" id="AWe-mk-c4h"/>
                                             </connections>
@@ -622,7 +622,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="r8F-Kk-BZj"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="BrownMap" id="r8F-Kk-BZj"/>
                     <connections>
                         <outlet property="mapView" destination="1om-Tr-5Ce" id="eH1-wm-ZqX"/>
                         <outlet property="newcoordinate" destination="2bQ-ou-cUz" id="JCB-Fb-hMF"/>
@@ -1026,13 +1026,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Locations" width="30" height="30"/>
-        <image name="Map" width="30" height="30"/>
-        <image name="Pin" width="24" height="24"/>
+        <image name="BrownLocations" width="30" height="30"/>
+        <image name="BrownMap" width="30" height="30"/>
+        <image name="BrownPin" width="24" height="24"/>
+        <image name="BrownVillages" width="30" height="30"/>
         <image name="Tag" width="30" height="30"/>
         <image name="User" width="24" height="24"/>
     </resources>
-    <color key="tintColor" red="1" green="0.93333333333333335" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.37647058823529411" green="0.22352941176470587" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

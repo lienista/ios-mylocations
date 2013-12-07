@@ -94,15 +94,15 @@
         image = [UIImage imageNamed:@"No Photo"];
     }
     villageCell.photoImageView.image = image;
-    villageCell.backgroundColor = [UIColor blackColor];
-    villageCell.descriptionLabel.textColor = [UIColor whiteColor];
+    villageCell.backgroundColor = [UIColor whiteColor];
+    villageCell.descriptionLabel.textColor = [UIColor brownColor];
     villageCell.descriptionLabel.highlightedTextColor = villageCell.descriptionLabel.textColor;
-    villageCell.addressLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    villageCell.addressLabel.textColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
     villageCell.addressLabel.highlightedTextColor = villageCell.addressLabel.textColor;
     
     UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    selectionView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
     
     villageCell.selectedBackgroundView = selectionView;
     villageCell.photoImageView.layer.cornerRadius = villageCell.photoImageView.bounds.size.width / 2.0f;
@@ -141,8 +141,8 @@
     [self performFetch];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.tableView.backgroundColor = [UIColor blackColor];
-    self.tableView.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.separatorColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
 }
 
 - (void)performFetch {

@@ -185,14 +185,14 @@
     gesturRecognizer.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:gesturRecognizer];
     
-    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [UIColor whiteColor];
     
-    self.tableView.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
-    self.descriptionTextView.textColor = [UIColor whiteColor];
-    self.descriptionTextView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
+    self.descriptionTextView.textColor = [UIColor brownColor];
+    self.descriptionTextView.backgroundColor = [UIColor whiteColor];
     self.photoLabel.textColor = [UIColor whiteColor];
     self.photoLabel.highlightedTextColor = self.photoLabel.textColor;
-    self.addressLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    self.addressLabel.textColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
     self.addressLabel.highlightedTextColor = self.addressLabel.textColor;
 }
 
@@ -392,11 +392,11 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.backgroundColor = [UIColor blackColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor brownColor];
     
     cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
-    cell.detailTextLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
     cell.detailTextLabel.highlightedTextColor = cell.detailTextLabel.textColor;
     
     UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -405,7 +405,7 @@
     
     if (indexPath.row == 2) {
         UILabel *addressLabel = (UILabel *)[cell viewWithTag:100];
-        addressLabel.textColor = [UIColor whiteColor];
+        addressLabel.textColor = [UIColor brownColor];
         addressLabel.highlightedTextColor = addressLabel.textColor;
     }
 }

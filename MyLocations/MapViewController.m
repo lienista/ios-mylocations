@@ -163,7 +163,7 @@
             annotationView.canShowCallout = YES;
             annotationView.animatesDrop = NO;
             annotationView.pinColor = MKPinAnnotationColorGreen;
-            annotationView.tintColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
+            annotationView.tintColor = [UIColor colorWithWhite:1.0f alpha:0.5f];
             
             // 4
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
