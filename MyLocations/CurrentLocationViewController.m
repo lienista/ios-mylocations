@@ -10,7 +10,7 @@
 #import "LocationDetailsViewController.h"
 #import <AudioToolbox/AudioServices.h>
 
-@interface CurrentLocationViewController () <UITabBarControllerDelegate>
+@interface CurrentLocationViewController () //<UITabBarControllerDelegate>
 
 @end
 
@@ -40,8 +40,8 @@
 {
     [super viewDidLoad];
     
-    self.tabBarController.delegate = self;
-    self.tabBarController.tabBar.translucent = NO;
+    //self.tabBarController.delegate = self;
+    //self.tabBarController.tabBar.translucent = NO;
     [self loadSoundEffect];
 }
 

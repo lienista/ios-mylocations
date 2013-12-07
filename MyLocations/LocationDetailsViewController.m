@@ -89,7 +89,16 @@
         location = self.locationToEdit;
     } else {
         hudView.text = @"Tagged";
+        NSLog(@"Tagged--->");
+        if (self.managedObjectContext == nil)
+        {
+            NSLog(@"Ruh Roh Nil");
+        } else
+        {
+            NSLog(@"Not nil-what gives?");
+        }
         location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+        NSLog(@"post Tagged--->");
         location.photoId = @-1;
     }
     
@@ -114,7 +123,9 @@
     
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
+        NSLog(@"BEFORE FATAL");
         FATAL_CORE_DATA_ERROR(error);
+        NSLog(@"POST - FATAL");
         return;
     }
     

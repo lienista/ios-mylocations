@@ -10,6 +10,9 @@
 #import "Location.h"
 #import "LocationCell.h"
 #import "LocationDetailsViewController.h"
+// esther
+#import "CurrentLocationViewController.h"
+
 #import "UIImage+Resize.h"
 #import "NSMutableString+AddText.h"
 
@@ -166,7 +169,12 @@
         
         Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
         controller.locationToEdit = location;
+    } else if ([segue.identifier isEqualToString:@"CurrLocation"]) {
+        CurrentLocationViewController *controller =segue.destinationViewController;
+        // core data objects from data store
+        controller.managedObjectContext = self.managedObjectContext;
     }
+
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

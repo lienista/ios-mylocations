@@ -447,7 +447,7 @@
                     <navigationItem key="navigationItem" title="Locations" id="aWZ-As-GId">
                         <barButtonItem key="leftBarButtonItem" systemItem="compose" id="VDl-jG-drd">
                             <connections>
-                                <segue destination="CZ4-MO-1fc" kind="modal" id="Hl3-T7-iuy"/>
+                                <segue destination="CZ4-MO-1fc" kind="modal" identifier="CurrLocation" id="Hl3-T7-iuy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
