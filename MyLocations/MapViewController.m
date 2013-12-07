@@ -162,7 +162,7 @@
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
             annotationView.animatesDrop = NO;
-            annotationView.pinColor = MKPinAnnotationColorGreen;
+            annotationView.pinColor = MKPinAnnotationColorPurple;
             annotationView.tintColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
             
             // 4
@@ -192,7 +192,7 @@
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
             annotationView.animatesDrop = NO;
-            annotationView.pinColor = MKPinAnnotationColorRed;
+            annotationView.pinColor = MKPinAnnotationColorGreen;
             annotationView.tintColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
             
             // 4
