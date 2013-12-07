@@ -265,7 +265,20 @@
 
 - (IBAction)textFieldReturn:(id)sender {
     [sender resignFirstResponder];
-    [_mapView removeAnnotations:[_mapView annotations]];
+        // esther
+    //[_mapView removeAnnotations:[_mapView annotations]];
+    NSArray * annotations =[_mapView annotations];
+    NSMutableArray * annotationsToRemove = [annotations mutableCopy ] ;
+    for (id annotation in annotations)
+    {
+        if ([annotation isKindOfClass:[Location class]]) {
+            [ annotationsToRemove removeObject:annotation];
+        } else if ([annotation isKindOfClass:[Village class]]) {
+            [ annotationsToRemove removeObject:annotation];
+        }
+    }
+    [_mapView removeAnnotations:annotationsToRemove ] ;
+    
     [self performSearch];
     
 }
@@ -292,7 +305,20 @@
 
 - (IBAction)coordinateReturn:(id)sender {
     [sender resignFirstResponder];
-    [_mapView removeAnnotations:[_mapView annotations]];
+    // esther
+    //[_mapView removeAnnotations:[_mapView annotations]];
+    NSArray * annotations =[_mapView annotations];
+    NSMutableArray * annotationsToRemove = [annotations mutableCopy ] ;
+    for (id annotation in annotations)
+    {
+        if ([annotation isKindOfClass:[Location class]]) {
+            [ annotationsToRemove removeObject:annotation];
+        } else if ([annotation isKindOfClass:[Village class]]) {
+            [ annotationsToRemove removeObject:annotation];
+        }
+    }
+    [_mapView removeAnnotations:annotationsToRemove ] ;
+
     [self coordinateSearch];
     
 }
