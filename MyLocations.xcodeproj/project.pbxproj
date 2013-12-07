@@ -34,6 +34,7 @@
 		FC1C6A1A18472235009D3C0D /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1C6A1918472235009D3C0D /* LocationCell.m */; };
 		FC1C6A1C1847492B009D3C0D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1C6A1B1847492B009D3C0D /* MapKit.framework */; };
 		FC1C6A1F184749A7009D3C0D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1C6A1E184749A7009D3C0D /* MapViewController.m */; };
+		FC4A52571853CAD1000104BD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A52561853CAD1000104BD /* SettingsViewController.m */; };
 		FC9F2677184584220043EB9E /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F2676184584220043EB9E /* CategoryPickerViewController.m */; };
 		FC9F267A1845CB5F0043EB9E /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F26791845CB5F0043EB9E /* HudView.m */; };
 		FCF3CF2718403A6400347862 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF3CF2618403A6400347862 /* LocationDetailsViewController.m */; };
@@ -97,6 +98,8 @@
 		FC1C6A1B1847492B009D3C0D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FC1C6A1D184749A7009D3C0D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		FC1C6A1E184749A7009D3C0D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		FC4A52551853CAD1000104BD /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../SettingsViewController.h; sourceTree = "<group>"; };
+		FC4A52561853CAD1000104BD /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
 		FC9F2675184584220043EB9E /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
 		FC9F2676184584220043EB9E /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
 		FC9F26781845CB5F0043EB9E /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				FCFF309F184D775700FAB477 /* Sound.caf */,
+				FC4A52551853CAD1000104BD /* SettingsViewController.h */,
+				FC4A52561853CAD1000104BD /* SettingsViewController.m */,
 				FC1C6A0F18469E98009D3C0D /* DataModel.xcdatamodeld */,
 				1A48A1BE18535C090032EE1B /* Village.h */,
 				1A48A1BF18535C090032EE1B /* Village.m */,
@@ -358,6 +363,7 @@
 				FC19E9F6183ED9D7001B8DCF /* AppDelegate.m in Sources */,
 				FC1C6A1A18472235009D3C0D /* LocationCell.m in Sources */,
 				FC1C6A171846E672009D3C0D /* LocationsViewController.m in Sources */,
+				FC4A52571853CAD1000104BD /* SettingsViewController.m in Sources */,
 				FC19E9FC183ED9D7001B8DCF /* CurrentLocationViewController.m in Sources */,
 				FCFF3093184D5A3D00FAB477 /* MyTabBarController.m in Sources */,
 				FCFF308D184C49EB00FAB477 /* UIImage+Resize.m in Sources */,
