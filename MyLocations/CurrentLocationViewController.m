@@ -30,23 +30,43 @@
     NSError *_lastGeocodingError;
     
     //Sound & UI improvements
-    UIButton *_logoButton;
-    BOOL _logoVisible;
+    // esther - took out
+    //UIButton *_logoButton;
+    //BOOL _logoVisible;
     UIActivityIndicatorView *_spinner;
     SystemSoundID _soundID;
 }
 
 - (void)viewDidLoad
 {
+    NSLog(@"VIEW DID LOAD");
     [super viewDidLoad];
     
     //self.tabBarController.delegate = self;
     //self.tabBarController.tabBar.translucent = NO;
     [self loadSoundEffect];
+    
+    // esther
+    if (_updatingLocation) {
+        [self stopLocationManager];
+    } else {
+        _location = nil;
+        _lastLocationError = nil;
+        _placemark = nil;
+        _lastGeocodingError = nil;
+        
+        [self startLocationManager];
+        
+    }
+    
+    [self updateLabels];
+    [self configureGetButton];
+
 }
 
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
+    NSLog(@"INIT W CODER");
     if ((self = [super initWithCoder:aDecoder])) {
         _locationManager = [[CLLocationManager alloc] init];
         _geocoder = [[CLGeocoder alloc] init];
@@ -62,9 +82,11 @@
 
 - (IBAction)getLocation:(id)sender
 {
-    if (_logoVisible) {
-        [self hideLogoView];
-    }
+    // esther
+    //if (_logoVisible) {
+    //    [self hideLogoView];
+    //}
+
     if (_updatingLocation) {
         [self stopLocationManager];
     } else {
@@ -81,6 +103,16 @@
     [self configureGetButton];
 }
 
+- (void)closeScreen {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)cancel:(id)sender
+{
+    [self closeScreen];
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"TagLocation"]) {
@@ -91,6 +123,15 @@
         
         // core data objects from data store
         controller.managedObjectContext = self.managedObjectContext;
+        
+        
+        // esther - get this off the stack
+        //[self closeScreen];
+        //[self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.1];
+        //UIViewController* presentingViewController = self.presentingViewController;
+        //[self dismissViewControllerAnimated:YES completion:^{
+       //     [presentingViewController presentViewController:controller animated:YES //completion:nil];
+       // }];
     }
 }
 
@@ -113,6 +154,7 @@
 {
     CLLocation *newLocation = [locations lastObject];
     NSLog(@"didUpdateLocations %@", newLocation);
+
     
     if ([newLocation.timestamp timeIntervalSinceNow] < -5.0) {
         return;
@@ -205,6 +247,7 @@
 }
 
 - (void)updateLabels {
+
     if (_location != nil) {
         self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", _location.coordinate.latitude];
         self.longitudeLabel.text = [NSString stringWithFormat: @"%.8f", _location.coordinate.longitude];
@@ -241,8 +284,10 @@
         } else if (_updatingLocation) {
             statusMessage = @"Searching...";
         } else {
-            statusMessage = @"";
-            [self showLogoView];
+            statusMessage = @"Press the Button to Start";
+            // esther
+            //statusMessage = @"";
+            //[self showLogoView];
         }
         self.messageLabel.text = statusMessage;
         self.latitudeTextLabel.hidden = YES;
@@ -280,6 +325,8 @@
     }
 }
 
+
+
 - (void)configureGetButton {
     if (_updatingLocation) {
         [self.getButton setTitle:@"Stop" forState:UIControlStateNormal];
@@ -309,7 +356,7 @@
     return YES;
 }
 
-#pragma mark - Logo View
+/*#pragma mark - Logo View
 - (void)showLogoView
 {
     if (_logoVisible) {
@@ -374,12 +421,14 @@
     logoRotator.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
     [_logoButton.layer addAnimation:logoRotator forKey:@"logoRotator"];
 }
+ 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     [self.containerView.layer removeAllAnimations];
     self.containerView.center = CGPointMake(self.view.bounds.size.width / 2.0f, 40.0f + self.containerView.bounds.size.height / 2.0f);
     [_logoButton.layer removeAllAnimations];
     [_logoButton removeFromSuperview]; _logoButton = nil;
 }
+*/
 
 #pragma mark - Sound Effect
 - (void)loadSoundEffect {
