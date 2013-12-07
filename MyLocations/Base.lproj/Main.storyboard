@@ -1025,10 +1025,10 @@
             </objects>
             <point key="canvasLocation" x="3575" y="-1123"/>
         </scene>
-        <!--Table View Controller - Settings-->
+        <!--Settings View Controller - Settings-->
         <scene sceneID="clf-Vl-B4i">
             <objects>
-                <tableViewController title="Settings" id="FBZ-BD-sIJ" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="FBZ-BD-sIJ" customClass="SettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="g5w-Cj-Q9b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
