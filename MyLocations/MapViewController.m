@@ -15,7 +15,13 @@
 
 @interface MapViewController () <MKMapViewDelegate, UINavigationBarDelegate>
 
-    @property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UITextField *searchText;
+@property (strong, nonatomic) NSMutableArray *matchingItems;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
+
+@property (strong, nonatomic) IBOutlet UITextField *newcoordinate;
+
+- (IBAction)textFieldReturn:(id)sender;
 @end
 
 @implementation MapViewController
@@ -42,7 +48,7 @@
 
 - (IBAction)showUser
 {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 1000, 1000);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 20000, 20000);
     
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
@@ -107,11 +113,11 @@
     MKCoordinateRegion region;
     
     if ([annotations count] == 0) {
-        region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 1000, 1000);
+        region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 20000, 20000);
         
     } else if ([annotations count] == 1) {
         id <MKAnnotation> annotation = [annotations lastObject];
-        region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 1000, 1000);
+        region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 20000, 20000);
         
     } else {
         CLLocationCoordinate2D topLeftCoord;
@@ -255,6 +261,65 @@
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar
 {
     return UIBarPositionTopAttached;
+}
+
+- (IBAction)textFieldReturn:(id)sender {
+    [sender resignFirstResponder];
+    [_mapView removeAnnotations:[_mapView annotations]];
+    [self performSearch];
+    
+}
+
+- (void) performSearch {
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    request.naturalLanguageQuery = _searchText.text;
+    request.region = _mapView.region;
+    _matchingItems = [[NSMutableArray alloc] init];
+    MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
+    
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        if (response.mapItems.count == 0)
+            NSLog(@"No Matches");
+        else
+            for (MKMapItem *item in response.mapItems) {
+                [_matchingItems addObject:item];
+                MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+                annotation.coordinate = item.placemark.coordinate;
+                annotation.title = item.name;
+                [_mapView addAnnotation:annotation];
+            } }];
+}
+
+- (IBAction)coordinateReturn:(id)sender {
+    [sender resignFirstResponder];
+    [_mapView removeAnnotations:[_mapView annotations]];
+    [self coordinateSearch];
+    
+}
+
+- (void) coordinateSearch {
+    NSString *string = _newcoordinate.text;
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@","];
+    NSMutableArray *coord = [[NSMutableArray alloc]initWithArray:[string componentsSeparatedByCharactersInSet:set]];
+    
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [[coord objectAtIndex:0] floatValue];
+    coordinate.longitude= [[coord objectAtIndex:1] floatValue];
+    
+    NSLog(@"%g, %g", coordinate.latitude, coordinate.longitude);
+    
+    
+    MKCoordinateSpan span = {0.05, 0.05};
+    MKCoordinateRegion region = {coordinate, span};
+    [_mapView setRegion:region];
+    
+    MKPointAnnotation *annotationPoint2 = [[MKPointAnnotation alloc] init];
+    
+    annotationPoint2.coordinate = coordinate;
+    annotationPoint2.title = @"Destination";
+    annotationPoint2.subtitle = @"Your End Point";
+    [_mapView addAnnotation:annotationPoint2];
+    
 }
 
 @end
