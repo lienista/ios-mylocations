@@ -9,6 +9,9 @@
 #import "MapViewController.h"
 #import "Location.h"
 #import "LocationDetailsViewController.h"
+#import "Village.h"
+#import "VillageDetailsViewController.h"
+
 
 @interface MapViewController () <MKMapViewDelegate, UINavigationBarDelegate>
 
@@ -18,6 +21,7 @@
 @implementation MapViewController
 {
     NSArray *_locations;
+    NSArray *_villages;
 }
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -45,10 +49,12 @@
 
 - (IBAction)showLocations
 {
-    MKCoordinateRegion region = [self regionForAnnotations:_locations];
+    MKCoordinateRegion region = [self regionForAnnotations:_locations withVillages:_villages];
     [self.mapView setRegion:region animated:YES];
 
 }
+
+
 
 - (void)updateLocations
 {
@@ -67,6 +73,23 @@
     }
     _locations = foundObjects;
     [self.mapView addAnnotations:_locations];
+    
+    NSEntityDescription *entity_village = [NSEntityDescription entityForName:@"Village" inManagedObjectContext:self.managedObjectContext]; NSFetchRequest *fetchRequestVillage = [[NSFetchRequest alloc] init];
+    [fetchRequestVillage setEntity:entity_village];
+    
+    NSError *error_village;
+    NSArray *foundVillageObjects = [self.managedObjectContext executeFetchRequest:fetchRequestVillage error:&error_village];
+    
+    if (foundVillageObjects == nil) {
+        FATAL_CORE_DATA_ERROR(error_village);
+        return;
+    }
+    if (_villages != nil) {
+        [self.mapView removeAnnotations:_villages];
+    }
+    _villages = foundVillageObjects;
+    [self.mapView addAnnotations:_villages];
+
 }
 
 - (void)viewDidLoad
@@ -74,12 +97,12 @@
     [super viewDidLoad];
     [self updateLocations];
 
-    if ([_locations count] > 0) {
+    if ([_locations count] > 0 || [_villages count] > 0) {
         [self showLocations];
     }
 }
 
-- (MKCoordinateRegion)regionForAnnotations:(NSArray *)annotations
+- (MKCoordinateRegion)regionForAnnotations:(NSArray *)annotations withVillages:(NSArray *)villages
 {
     MKCoordinateRegion region;
     
@@ -150,7 +173,38 @@
         button.tag = [_locations indexOfObject:(Location *)annotation];
         
         return annotationView;
+    } else if ([annotation isKindOfClass:[Village class]]) {
+        // 2
+        static NSString *identifier = @"Village";
+        MKPinAnnotationView *annotationView =
+        (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        
+        if (annotationView == nil) {
+            annotationView = [[MKPinAnnotationView alloc]
+                              initWithAnnotation:annotation reuseIdentifier:identifier];
+            // 3
+            annotationView.enabled = YES;
+            annotationView.canShowCallout = YES;
+            annotationView.animatesDrop = NO;
+            annotationView.pinColor = MKPinAnnotationColorRed;
+            annotationView.tintColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
+            
+            // 4
+            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            [rightButton addTarget:self
+                            action:@selector(showVillageDetails:)
+                  forControlEvents:UIControlEventTouchUpInside];
+            annotationView.rightCalloutAccessoryView = rightButton;
+        } else {
+            annotationView.annotation = annotation;
+        }
+        // 5
+        UIButton *button = (UIButton *)annotationView.rightCalloutAccessoryView;
+        button.tag = [_villages indexOfObject:(Village *)annotation];
+        
+        return annotationView;
     }
+
     return nil;
 }
 
@@ -158,6 +212,11 @@
 {
     [self performSegueWithIdentifier:@"EditLocation" sender:button];
 }
+- (void)showVillageDetails:(UIButton *)button
+{
+    [self performSegueWithIdentifier:@"EditVillage" sender:button];
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -171,7 +230,18 @@
         
         Location *location = _locations[button.tag];
         controller.locationToEdit = location;
+    } else if ([segue.identifier isEqualToString:@"EditVillage"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        VillageDetailsViewController *controller = (VillageDetailsViewController *) navigationController.topViewController;
+        controller.managedObjectContext = self.managedObjectContext;
+        
+        UIButton *button = (UIButton *)sender;
+        
+        Village *village = _villages[button.tag];
+        controller.VillageToEdit = village;
     }
+
 }
 
  - (void)contextDidChange:(NSNotification *)notification
