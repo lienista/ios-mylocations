@@ -14,14 +14,30 @@
 		FC19E9F2183ED9D7001B8DCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC19E9F1183ED9D7001B8DCF /* main.m */; };
 		FC19E9F6183ED9D7001B8DCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC19E9F5183ED9D7001B8DCF /* AppDelegate.m */; };
 		FC19E9F9183ED9D7001B8DCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC19E9F7183ED9D7001B8DCF /* Main.storyboard */; };
-		FC19E9FC183ED9D7001B8DCF /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC19E9FB183ED9D7001B8DCF /* FirstViewController.m */; };
-		FC19E9FF183ED9D7001B8DCF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC19E9FE183ED9D7001B8DCF /* SecondViewController.m */; };
+		FC19E9FC183ED9D7001B8DCF /* CurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC19E9FB183ED9D7001B8DCF /* CurrentLocationViewController.m */; };
 		FC19EA01183ED9D7001B8DCF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC19EA00183ED9D7001B8DCF /* Images.xcassets */; };
 		FC19EA08183ED9D7001B8DCF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC19EA07183ED9D7001B8DCF /* XCTest.framework */; };
 		FC19EA09183ED9D7001B8DCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC19E9E5183ED9D7001B8DCF /* Foundation.framework */; };
 		FC19EA0A183ED9D7001B8DCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC19E9E9183ED9D7001B8DCF /* UIKit.framework */; };
 		FC19EA12183ED9D7001B8DCF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC19EA10183ED9D7001B8DCF /* InfoPlist.strings */; };
 		FC19EA14183ED9D7001B8DCF /* MyLocationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC19EA13183ED9D7001B8DCF /* MyLocationsTests.m */; };
+		FC19EA1E183EEEE5001B8DCF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC19EA1D183EEEE5001B8DCF /* CoreLocation.framework */; };
+		FC1C6A0E18469E68009D3C0D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1C6A0D18469E68009D3C0D /* CoreData.framework */; };
+		FC1C6A1118469E98009D3C0D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC1C6A0F18469E98009D3C0D /* DataModel.xcdatamodeld */; };
+		FC1C6A141846A5F4009D3C0D /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1C6A131846A5F4009D3C0D /* Location.m */; };
+		FC1C6A171846E672009D3C0D /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1C6A161846E672009D3C0D /* LocationsViewController.m */; };
+		FC1C6A1A18472235009D3C0D /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1C6A1918472235009D3C0D /* LocationCell.m */; };
+		FC1C6A1C1847492B009D3C0D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1C6A1B1847492B009D3C0D /* MapKit.framework */; };
+		FC1C6A1F184749A7009D3C0D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1C6A1E184749A7009D3C0D /* MapViewController.m */; };
+		FC9F2677184584220043EB9E /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F2676184584220043EB9E /* CategoryPickerViewController.m */; };
+		FC9F267A1845CB5F0043EB9E /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F26791845CB5F0043EB9E /* HudView.m */; };
+		FCF3CF2718403A6400347862 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF3CF2618403A6400347862 /* LocationDetailsViewController.m */; };
+		FCFF308D184C49EB00FAB477 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF308C184C49EB00FAB477 /* UIImage+Resize.m */; };
+		FCFF3090184D405000FAB477 /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF308F184D405000FAB477 /* NSMutableString+AddText.m */; };
+		FCFF3093184D5A3D00FAB477 /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF3092184D5A3D00FAB477 /* MyTabBarController.m */; };
+		FCFF3096184D5AE200FAB477 /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFF3095184D5AE200FAB477 /* MyNavigationController.m */; };
+		FCFF3098184D71A800FAB477 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCFF3097184D71A800FAB477 /* AudioToolbox.framework */; };
+		FCFF30A0184D775700FAB477 /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = FCFF309F184D775700FAB477 /* Sound.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +62,42 @@
 		FC19E9F4183ED9D7001B8DCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FC19E9F5183ED9D7001B8DCF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FC19E9F8183ED9D7001B8DCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FC19E9FA183ED9D7001B8DCF /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		FC19E9FB183ED9D7001B8DCF /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		FC19E9FD183ED9D7001B8DCF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		FC19E9FE183ED9D7001B8DCF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		FC19E9FA183ED9D7001B8DCF /* CurrentLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentLocationViewController.h; sourceTree = "<group>"; };
+		FC19E9FB183ED9D7001B8DCF /* CurrentLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentLocationViewController.m; sourceTree = "<group>"; };
 		FC19EA00183ED9D7001B8DCF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC19EA06183ED9D7001B8DCF /* MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC19EA07183ED9D7001B8DCF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FC19EA0F183ED9D7001B8DCF /* MyLocationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyLocationsTests-Info.plist"; sourceTree = "<group>"; };
 		FC19EA11183ED9D7001B8DCF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC19EA13183ED9D7001B8DCF /* MyLocationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationsTests.m; sourceTree = "<group>"; };
+		FC19EA1D183EEEE5001B8DCF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FC1C6A0D18469E68009D3C0D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FC1C6A1018469E98009D3C0D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		FC1C6A121846A5F4009D3C0D /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		FC1C6A131846A5F4009D3C0D /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		FC1C6A151846E672009D3C0D /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
+		FC1C6A161846E672009D3C0D /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
+		FC1C6A1818472235009D3C0D /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
+		FC1C6A1918472235009D3C0D /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
+		FC1C6A1B1847492B009D3C0D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FC1C6A1D184749A7009D3C0D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		FC1C6A1E184749A7009D3C0D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		FC9F2675184584220043EB9E /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
+		FC9F2676184584220043EB9E /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
+		FC9F26781845CB5F0043EB9E /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
+		FC9F26791845CB5F0043EB9E /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
+		FCF3CF2518403A6400347862 /* LocationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailsViewController.h; sourceTree = "<group>"; };
+		FCF3CF2618403A6400347862 /* LocationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailsViewController.m; sourceTree = "<group>"; };
+		FCFF308B184C49EB00FAB477 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		FCFF308C184C49EB00FAB477 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		FCFF308E184D405000FAB477 /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+AddText.h"; sourceTree = "<group>"; };
+		FCFF308F184D405000FAB477 /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+AddText.m"; sourceTree = "<group>"; };
+		FCFF3091184D5A3D00FAB477 /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		FCFF3092184D5A3D00FAB477 /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
+		FCFF3094184D5AE200FAB477 /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
+		FCFF3095184D5AE200FAB477 /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
+		FCFF3097184D71A800FAB477 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FCFF309F184D775700FAB477 /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +105,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCFF3098184D71A800FAB477 /* AudioToolbox.framework in Frameworks */,
+				FC1C6A1C1847492B009D3C0D /* MapKit.framework in Frameworks */,
+				FC1C6A0E18469E68009D3C0D /* CoreData.framework in Frameworks */,
+				FC19EA1E183EEEE5001B8DCF /* CoreLocation.framework in Frameworks */,
 				FC19E9E8183ED9D7001B8DCF /* CoreGraphics.framework in Frameworks */,
 				FC19E9EA183ED9D7001B8DCF /* UIKit.framework in Frameworks */,
 				FC19E9E6183ED9D7001B8DCF /* Foundation.framework in Frameworks */,
@@ -104,6 +150,10 @@
 		FC19E9E4183ED9D7001B8DCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCFF3097184D71A800FAB477 /* AudioToolbox.framework */,
+				FC1C6A1B1847492B009D3C0D /* MapKit.framework */,
+				FC1C6A0D18469E68009D3C0D /* CoreData.framework */,
+				FC19EA1D183EEEE5001B8DCF /* CoreLocation.framework */,
 				FC19E9E5183ED9D7001B8DCF /* Foundation.framework */,
 				FC19E9E7183ED9D7001B8DCF /* CoreGraphics.framework */,
 				FC19E9E9183ED9D7001B8DCF /* UIKit.framework */,
@@ -115,13 +165,35 @@
 		FC19E9EB183ED9D7001B8DCF /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
+				FCFF309F184D775700FAB477 /* Sound.caf */,
+				FC1C6A0F18469E98009D3C0D /* DataModel.xcdatamodeld */,
 				FC19E9F4183ED9D7001B8DCF /* AppDelegate.h */,
 				FC19E9F5183ED9D7001B8DCF /* AppDelegate.m */,
 				FC19E9F7183ED9D7001B8DCF /* Main.storyboard */,
-				FC19E9FA183ED9D7001B8DCF /* FirstViewController.h */,
-				FC19E9FB183ED9D7001B8DCF /* FirstViewController.m */,
-				FC19E9FD183ED9D7001B8DCF /* SecondViewController.h */,
-				FC19E9FE183ED9D7001B8DCF /* SecondViewController.m */,
+				FC1C6A1818472235009D3C0D /* LocationCell.h */,
+				FC1C6A1918472235009D3C0D /* LocationCell.m */,
+				FC1C6A121846A5F4009D3C0D /* Location.h */,
+				FC1C6A131846A5F4009D3C0D /* Location.m */,
+				FC9F26781845CB5F0043EB9E /* HudView.h */,
+				FC9F26791845CB5F0043EB9E /* HudView.m */,
+				FCFF3094184D5AE200FAB477 /* MyNavigationController.h */,
+				FCFF3095184D5AE200FAB477 /* MyNavigationController.m */,
+				FCFF3091184D5A3D00FAB477 /* MyTabBarController.h */,
+				FCFF3092184D5A3D00FAB477 /* MyTabBarController.m */,
+				FCFF308E184D405000FAB477 /* NSMutableString+AddText.h */,
+				FCFF308F184D405000FAB477 /* NSMutableString+AddText.m */,
+				FCFF308B184C49EB00FAB477 /* UIImage+Resize.h */,
+				FCFF308C184C49EB00FAB477 /* UIImage+Resize.m */,
+				FC1C6A1D184749A7009D3C0D /* MapViewController.h */,
+				FC1C6A1E184749A7009D3C0D /* MapViewController.m */,
+				FC1C6A151846E672009D3C0D /* LocationsViewController.h */,
+				FC1C6A161846E672009D3C0D /* LocationsViewController.m */,
+				FC9F2675184584220043EB9E /* CategoryPickerViewController.h */,
+				FC9F2676184584220043EB9E /* CategoryPickerViewController.m */,
+				FC19E9FA183ED9D7001B8DCF /* CurrentLocationViewController.h */,
+				FC19E9FB183ED9D7001B8DCF /* CurrentLocationViewController.m */,
+				FCF3CF2518403A6400347862 /* LocationDetailsViewController.h */,
+				FCF3CF2618403A6400347862 /* LocationDetailsViewController.m */,
 				FC19EA00183ED9D7001B8DCF /* Images.xcassets */,
 				FC19E9EC183ED9D7001B8DCF /* Supporting Files */,
 			);
@@ -236,6 +308,7 @@
 				FC19EA01183ED9D7001B8DCF /* Images.xcassets in Resources */,
 				FC19E9F0183ED9D7001B8DCF /* InfoPlist.strings in Resources */,
 				FC19E9F9183ED9D7001B8DCF /* Main.storyboard in Resources */,
+				FCFF30A0184D775700FAB477 /* Sound.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,10 +327,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC19E9FF183ED9D7001B8DCF /* SecondViewController.m in Sources */,
+				FC1C6A1118469E98009D3C0D /* DataModel.xcdatamodeld in Sources */,
 				FC19E9F6183ED9D7001B8DCF /* AppDelegate.m in Sources */,
-				FC19E9FC183ED9D7001B8DCF /* FirstViewController.m in Sources */,
+				FC1C6A1A18472235009D3C0D /* LocationCell.m in Sources */,
+				FC1C6A171846E672009D3C0D /* LocationsViewController.m in Sources */,
+				FC19E9FC183ED9D7001B8DCF /* CurrentLocationViewController.m in Sources */,
+				FCFF3093184D5A3D00FAB477 /* MyTabBarController.m in Sources */,
+				FCFF308D184C49EB00FAB477 /* UIImage+Resize.m in Sources */,
+				FC1C6A141846A5F4009D3C0D /* Location.m in Sources */,
 				FC19E9F2183ED9D7001B8DCF /* main.m in Sources */,
+				FCFF3096184D5AE200FAB477 /* MyNavigationController.m in Sources */,
+				FC9F267A1845CB5F0043EB9E /* HudView.m in Sources */,
+				FC9F2677184584220043EB9E /* CategoryPickerViewController.m in Sources */,
+				FCF3CF2718403A6400347862 /* LocationDetailsViewController.m in Sources */,
+				FCFF3090184D405000FAB477 /* NSMutableString+AddText.m in Sources */,
+				FC1C6A1F184749A7009D3C0D /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +471,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyLocations/MyLocations-Prefix.pch";
 				INFOPLIST_FILE = "MyLocations/MyLocations-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -400,6 +485,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyLocations/MyLocations-Prefix.pch";
 				INFOPLIST_FILE = "MyLocations/MyLocations-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -466,6 +552,7 @@
 				FC19EA19183ED9D7001B8DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC19EA1A183ED9D7001B8DCF /* Build configuration list for PBXNativeTarget "MyLocationsTests" */ = {
 			isa = XCConfigurationList;
@@ -474,8 +561,23 @@
 				FC19EA1C183ED9D7001B8DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FC1C6A0F18469E98009D3C0D /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FC1C6A1018469E98009D3C0D /* DataModel.xcdatamodel */,
+			);
+			currentVersion = FC1C6A1018469E98009D3C0D /* DataModel.xcdatamodel */;
+			name = DataModel.xcdatamodeld;
+			path = ../DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FC19E9DA183ED9D6001B8DCF /* Project object */;
 }
