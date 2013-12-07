@@ -10,4 +10,6 @@
 
 @interface SettingsViewController : UITableViewController
 
+- (IBAction)autoMapNow;
+
 @end

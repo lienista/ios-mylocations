@@ -9,10 +9,47 @@
 #import "SettingsViewController.h"
 
 @interface SettingsViewController ()
-
+{
+    NSTimer *_autoTimer;
+}
+@property (weak, nonatomic) IBOutlet UISwitch *AutoMapOn;
 @end
 
+
+
 @implementation SettingsViewController
+
+- (void) showAlert:(id)obj {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Hello, World" message:@"This is my first app!"
+            delegate:nil
+            cancelButtonTitle:@"Awesome"otherButtonTitles:nil];
+        [alertView show];
+    
+    // actually, create a pin in CoreData
+    
+    
+    
+}
+- (IBAction)autoMapNow {
+    if (_AutoMapOn.on)
+    {
+        
+        // drop a pin every 5 seconds!!
+        
+        _autoTimer = [NSTimer scheduledTimerWithTimeInterval:5.0
+                                         target:self
+                                       selector:@selector(showAlert:)
+                                       userInfo:nil
+                                        repeats:YES];
+        
+    } else {
+        [_autoTimer invalidate];
+        _autoTimer = nil;
+    }
+}
+
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
