@@ -397,11 +397,11 @@
     cell.textLabel.textColor = [UIColor brownColor];
     
     cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
-    cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
+    cell.detailTextLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
     cell.detailTextLabel.highlightedTextColor = cell.detailTextLabel.textColor;
     
     UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
-    selectionView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
+    selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
     cell.selectedBackgroundView = selectionView;
     
     if (indexPath.row == 2) {

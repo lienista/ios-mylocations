@@ -264,7 +264,7 @@
     UIView *separator = [[UIView alloc] initWithFrame: CGRectMake(15.0f, tableView.sectionHeaderHeight - 0.5f, tableView.bounds.size.width - 15.0f, 0.5f)]; separator.backgroundColor = tableView.separatorColor;
     
     UIView *view = [[UIView alloc] initWithFrame: CGRectMake(0.0f, 0.0f, tableView.bounds.size.width, tableView.sectionHeaderHeight)];
-    view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.85f];
+    view.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.85f];
     
     [view addSubview:label];
     [view addSubview:separator];
