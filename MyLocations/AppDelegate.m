@@ -11,6 +11,7 @@
 #import "LocationsViewController.h"
 #import "CurrentVillageViewController.h"
 #import "VillagesViewController.h"
+#import "SettingsViewController.h"
 #import "MapViewController.h"
 
 NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectContextSaveDidFailNotification";
@@ -56,6 +57,9 @@ NSString * const ManagedObjectContextSaveDidFailNotification = @"ManagedObjectCo
     // 2-> 0 , esther
     MapViewController *mapViewController = (MapViewController *)tabBarController.viewControllers[0];
     mapViewController.managedObjectContext = self.managedObjectContext;
+    
+    SettingsViewController *settingsViewController = (SettingsViewController *)tabBarController.viewControllers[3];
+    settingsViewController.managedObjectContext = self.managedObjectContext;
     
     
     

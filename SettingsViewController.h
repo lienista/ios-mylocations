@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UITableViewController
+@interface SettingsViewController : UITableViewController <CLLocationManagerDelegate>
+
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)autoMapNow;
 
