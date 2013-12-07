@@ -102,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="-122"/>
+            <point key="canvasLocation" x="1505" y="-254"/>
         </scene>
         <!--Location Details View Controller - Tag Location-->
         <scene sceneID="oRc-qR-3Ly">
@@ -374,9 +374,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
-                        <segue destination="GmI-uw-dfL" kind="relationship" relationship="viewControllers" id="z6E-D4-yAH"/>
                         <segue destination="tuc-cc-HUU" kind="relationship" relationship="viewControllers" id="fCD-I1-MAd"/>
+                        <segue destination="GmI-uw-dfL" kind="relationship" relationship="viewControllers" id="z6E-D4-yAH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -445,7 +444,13 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Locations" id="aWZ-As-GId"/>
+                    <navigationItem key="navigationItem" title="Locations" id="aWZ-As-GId">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="VDl-jG-drd">
+                            <connections>
+                                <segue destination="CZ4-MO-1fc" kind="modal" id="Hl3-T7-iuy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ft4-wp-Fpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -531,6 +536,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gvE-NI-k0n"/>
+        <segue reference="zRk-4d-3d0"/>
     </inferredMetricsTieBreakers>
 </document>
