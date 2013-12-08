@@ -1,18 +1,18 @@
 //
-//  CategoryPickerViewController.m
+//  CategoryVillageViewController.m
 //  MyLocations
 //
-//  Created by Lienne Nguyen on 11/26/13.
+//  Created by Lien Nguyen on 12/7/13.
 //  Copyright (c) 2013 Lienne Nguyen. All rights reserved.
 //
 
-#import "CategoryPickerViewController.h"
+#import "CategoryVillageViewController.h"
 
-@interface CategoryPickerViewController ()
+@interface CategoryVillageViewController ()
 
 @end
 
-@implementation CategoryPickerViewController
+@implementation CategoryVillageViewController
 
 {
     NSArray *_categories;
@@ -23,17 +23,18 @@
     [super viewDidLoad];
     _categories = @[
                     @"No Category",
-                    @"School",
-                    @"Church",
-                    @"Hospital",
-                    @"Water",
-                    @"Obstacle",
-                    @"Crisis Area",
-                    @"Natural Landmark",
+                    @"Kwena (Bakoena)",
+                    @"Natal (North) Nguni",
+                    @"Batloung (the Tlou)",
+                    @"Baphuthi (the Phuti)",
+                    @"Bafokeng",
+                    @"Bataung (the Tau)",
+                    @"Bats'oeneng (the tso'ene)",
+                    @"Cape (South) Nguni (Thembu)",
                     ];
     
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.separatorColor = [UIColor colorWithWhite:0.0f alpha:0.2f];
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
 }
 
 #pragma mark - UITableViewDataSource
@@ -87,8 +88,8 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.backgroundColor = [UIColor whiteColor];
-    cell.textLabel.textColor = [UIColor brownColor];
+    cell.backgroundColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
     UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
     
