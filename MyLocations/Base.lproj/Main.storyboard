@@ -1196,7 +1196,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Bvo-5M-voc"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="BrownSettings" id="Bvo-5M-voc"/>
                     <navigationItem key="navigationItem" title="Settings" id="s0W-rr-QFc">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="xMM-uj-BVG">
                             <connections>
@@ -1222,6 +1222,7 @@
         <image name="BrownLocations" width="30" height="30"/>
         <image name="BrownMap" width="30" height="30"/>
         <image name="BrownPin" width="24" height="24"/>
+        <image name="BrownSettings" width="30" height="30"/>
         <image name="BrownVillages" width="30" height="30"/>
         <image name="Tag" width="30" height="30"/>
         <image name="User" width="24" height="24"/>
