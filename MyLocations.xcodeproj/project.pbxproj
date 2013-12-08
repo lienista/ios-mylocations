@@ -36,6 +36,7 @@
 		FC1C6A1F184749A7009D3C0D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1C6A1E184749A7009D3C0D /* MapViewController.m */; };
 		FC4A52571853CAD1000104BD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A52561853CAD1000104BD /* SettingsViewController.m */; };
 		FC4A525A1853D495000104BD /* Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A52591853D495000104BD /* Marker.m */; };
+		FC4A525D1853E2A4000104BD /* CategoryVillageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC4A525C1853E2A4000104BD /* CategoryVillageViewController.m */; };
 		FC9F2677184584220043EB9E /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F2676184584220043EB9E /* CategoryPickerViewController.m */; };
 		FC9F267A1845CB5F0043EB9E /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9F26791845CB5F0043EB9E /* HudView.m */; };
 		FCF3CF2718403A6400347862 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF3CF2618403A6400347862 /* LocationDetailsViewController.m */; };
@@ -103,6 +104,8 @@
 		FC4A52561853CAD1000104BD /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../SettingsViewController.m; sourceTree = "<group>"; };
 		FC4A52581853D495000104BD /* Marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marker.h; sourceTree = "<group>"; };
 		FC4A52591853D495000104BD /* Marker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marker.m; sourceTree = "<group>"; };
+		FC4A525B1853E2A4000104BD /* CategoryVillageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryVillageViewController.h; sourceTree = "<group>"; };
+		FC4A525C1853E2A4000104BD /* CategoryVillageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryVillageViewController.m; sourceTree = "<group>"; };
 		FC9F2675184584220043EB9E /* CategoryPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryPickerViewController.h; sourceTree = "<group>"; };
 		FC9F2676184584220043EB9E /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
 		FC9F26781845CB5F0043EB9E /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				FC1C6A161846E672009D3C0D /* LocationsViewController.m */,
 				1A48A1CD185381120032EE1B /* VillagesViewController.h */,
 				1A48A1CE185381120032EE1B /* VillagesViewController.m */,
+				FC4A525B1853E2A4000104BD /* CategoryVillageViewController.h */,
+				FC4A525C1853E2A4000104BD /* CategoryVillageViewController.m */,
 				FC9F2675184584220043EB9E /* CategoryPickerViewController.h */,
 				FC9F2676184584220043EB9E /* CategoryPickerViewController.m */,
 				FC19E9FA183ED9D7001B8DCF /* CurrentLocationViewController.h */,
@@ -367,6 +372,7 @@
 				1A48A1CC185361780032EE1B /* VillageDetailsViewController.m in Sources */,
 				FC19E9F6183ED9D7001B8DCF /* AppDelegate.m in Sources */,
 				FC1C6A1A18472235009D3C0D /* LocationCell.m in Sources */,
+				FC4A525D1853E2A4000104BD /* CategoryVillageViewController.m in Sources */,
 				FC1C6A171846E672009D3C0D /* LocationsViewController.m in Sources */,
 				FC4A52571853CAD1000104BD /* SettingsViewController.m in Sources */,
 				FC19E9FC183ED9D7001B8DCF /* CurrentLocationViewController.m in Sources */,

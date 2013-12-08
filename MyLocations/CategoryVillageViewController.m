@@ -1,18 +1,18 @@
 //
-//  CategoryPickerViewController.m
+//  CategoryVillageViewController.m
 //  MyLocations
 //
-//  Created by Lienne Nguyen on 11/26/13.
+//  Created by Lien Nguyen on 12/7/13.
 //  Copyright (c) 2013 Lienne Nguyen. All rights reserved.
 //
 
-#import "CategoryPickerViewController.h"
+#import "CategoryVillageViewController.h"
 
-@interface CategoryPickerViewController ()
+@interface CategoryVillageViewController ()
 
 @end
 
-@implementation CategoryPickerViewController
+@implementation CategoryVillageViewController
 
 {
     NSArray *_categories;
@@ -23,13 +23,14 @@
     [super viewDidLoad];
     _categories = @[
                     @"No Category",
-                    @"School",
-                    @"Church",
-                    @"Hospital",
-                    @"Water",
-                    @"Obstacle",
-                    @"Crisis Area",
-                    @"Natural Landmark",
+                    @"Kwena (Bakoena)",
+                    @"Natal (North) Nguni",
+                    @"Batloung (the Tlou)",
+                    @"Baphuthi (the Phuti)",
+                    @"Bafokeng",
+                    @"Bataung (the Tau)",
+                    @"Bats'oeneng (the tso'ene)",
+                    @"Cape (South) Nguni (Thembu)",
                     ];
     
     self.tableView.backgroundColor = [UIColor blackColor];
